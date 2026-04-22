@@ -50,7 +50,7 @@
 
         <div class="flex items-center gap-4 mb-12 relative z-10">
           <div class="w-14 h-14 bg-gradient-to-tr from-gray-800 to-gray-700 rounded-full overflow-hidden border-2 border-white/10">
-            <img src="/images/profile2.JPG" alt="Profile" class="w-full h-full object-cover" />
+            <img src="/images/profile2.jpg" alt="Profile" class="w-full h-full object-cover" />
           </div>
           <div>
             <p class="text-[10px] text-[#ff6565] font-bold uppercase tracking-widest mb-0.5">Student at KMITL</p>
@@ -133,13 +133,13 @@
           
           <div id="home-portrait-wrapper" class="w-full aspect-[4/5] bg-gray-800 rounded-[2rem] overflow-hidden mb-6 relative">
             <!-- First Image (Static base with parallax) -->
-            <img src="/images/profile1.JPG" 
+            <img src="/images/profile1.jpg" 
                  alt="Natthawit Portrait 1" 
                  class="parallax-img absolute origin-top -top-[15%] w-full h-[130%] object-cover cursor-pointer" />
             
             <!-- Second Image (Slides up on scroll) -->
             <div class="portrait-slide-wrapper absolute inset-0 overflow-hidden translate-y-full z-10">
-              <img src="/images/profile2.JPG" 
+              <img src="/images/profile2.jpg" 
                    alt="Natthawit Portrait 2" 
                    class="parallax-img absolute origin-top -top-[15%] w-full h-[130%] object-cover cursor-pointer" />
             </div>
@@ -979,7 +979,7 @@ const projects = [
     title: 'Touchless Audio Control',
     category: 'UI / Embedded',
     description: 'The touchless voice control system uses gesture sensors to perform actions such as adjusting volume, playing/pausing, and changing tracks. Processing is done via a microprocessor and displayed on an LCD screen. Designed for the elderly, it reduces complexity, reduces risk, and increases convenience, with customizable settings.',
-    image: '/images/proj3.JPG',
+    image: '/images/proj3.jpg',
     link: '/pdf/PinyoPlay Touchless Audio Control.pdf'
   },
   {
