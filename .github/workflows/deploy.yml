@@ -1,0 +1,32 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main] # หรือเปลี่ยนเป็นชื่อ branch ที่คุณใช้ (เช่น master)
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # จำเป็นสำหรับการอัปโหลดไฟล์
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+
+      - name: Setup Node ⚙️
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install and Build 🔧
+        run: |
+          npm install
+          npm run generate
+
+      - name: Deploy 🚀
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./.output/public
+          publish_branch: gh-pages # ระบบจะเอาไฟล์ที่ Build เสร็จไปไว้ใน branch นี้
