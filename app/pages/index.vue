@@ -167,14 +167,14 @@
         <div class="max-w-5xl w-full mx-auto flex flex-col gap-12 relative z-10 gsap-fade-up">
           
           <!-- Header and Tabs Container -->
-          <div class="flex flex-col items-start justify-between border-b border-gray-800 pb-6 gap-4">
+          <div class="flex flex-col md:flex-row items-start md:items-end justify-between border-b border-gray-800 pb-6 md:pb-8 gap-4 md:gap-8">
             <h2 class="text-4xl sm:text-5xl md:text-7xl font-serif font-bold text-white tracking-widest uppercase dev-title">
               <span class="dev-type-line">About</span><br/>
               <span class="dev-type-line text-[#ff6565]">Me.</span>
             </h2>
             
             <!-- Tab Controls -->
-            <div class="flex bg-[#111]/80 backdrop-blur-md p-1 rounded-full border border-gray-800 relative shadow-xl overflow-hidden shrink-0 self-start">
+            <div class="flex bg-[#111]/80 backdrop-blur-md p-1 rounded-full border border-gray-800 relative shadow-xl overflow-hidden shrink-0">
               <!-- Active Slide Pill using absolute positioning and translateX -->
               <div class="absolute top-1 bottom-1 w-[calc(33.33%-2px)] bg-[#ff6565] rounded-full transition-transform duration-500 shadow-[0_0_15px_rgba(255,101,101,0.5)]"
                    :style="{ transform: `translateX(${tabs.indexOf(activeTab) * 100}%)`, left: '4px' }"></div>
@@ -195,7 +195,7 @@
             <Transition name="fade-slide" mode="out-in">
               
               <!-- 1. ABOUT ME TAB -->
-              <div v-if="activeTab === 'About Me'" class="grid grid-cols-1 lg:grid-cols-2 gap-12 text-gray-400 text-lg leading-relaxed absolute w-full">
+              <div v-if="activeTab === 'About'" class="grid grid-cols-1 lg:grid-cols-2 gap-12 text-gray-400 text-lg leading-relaxed absolute w-full">
                 <div class="flex flex-col gap-6">
                   <p><strong class="text-white text-2xl font-serif tracking-wide">Hello, I'm Natthawit.</strong> <br/>A dedicated engineer architecting cyber-physical operations, bridging the gap between hardware intelligence and digital ecosystems.</p>
                   <p>My journey started with hacking ESP32 microcontrollers and has evolved into engineering high-performance web applications capable of managing real-time data flow perfectly for IoT systems.</p>
@@ -309,13 +309,13 @@
         
         <div class="max-w-6xl w-full mx-auto flex flex-col gap-12 relative z-10 my-auto">
           
-          <div class="flex flex-col items-start justify-between border-b border-gray-800 pb-6 gap-4 gsap-fade-up">
+          <div class="flex flex-col md:flex-row items-start md:items-end justify-between border-b border-gray-800 pb-6 gap-4 md:gap-6 gsap-fade-up">
             <h2 class="text-4xl sm:text-5xl md:text-7xl font-serif font-bold text-white tracking-widest uppercase dev-title">
               <span class="dev-type-line">My</span><br/>
               <span class="dev-type-line text-[#ff6565]">Projects.</span>
             </h2>
             <!-- Project Category Selector (Replaced SYSTEM_MODULES) -->
-            <div class="flex bg-[#111]/80 backdrop-blur-md p-1 rounded-full border border-gray-800 relative shadow-xl overflow-hidden shrink-0 self-start">
+            <div class="flex bg-[#111]/80 backdrop-blur-md p-1 rounded-full border border-gray-800 relative shadow-xl overflow-hidden shrink-0">
               <!-- Active Slide Pill -->
               <div class="absolute top-1 bottom-1 w-[calc(33.33%-2px)] bg-[#ff6565] rounded-full transition-transform duration-500 shadow-[0_0_15px_rgba(255,101,101,0.4)]"
                    :style="{ transform: `translateX(${projectCategories.indexOf(selectedProjectCategory) * 100}%)`, left: '1px' }"></div>
@@ -952,8 +952,8 @@ onUnmounted(() => {
   if (binaryInterval) clearInterval(binaryInterval)
 })
 
-const activeTab = ref('About Me')
-const tabs = ['About Me', 'Education', 'Skills']
+const activeTab = ref('About')
+const tabs = ['About', 'Education', 'Skills']
 
 const educations = [
   { 
