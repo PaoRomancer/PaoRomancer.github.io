@@ -128,7 +128,8 @@ onMounted(() => {
     ctx.stroke();
 
     // Text PAO in the middle of the chip
-    ctx.filter = `drop-shadow(0px 0px ${isMobile ? 4 : 8}px rgba(255, 101, 101, ${isMobile ? 0.5 : 0.8}))`;
+    ctx.shadowColor = `rgba(255, 101, 101, ${isMobile ? 0.5 : 0.8})`;
+    ctx.shadowBlur = isMobile ? 4 : 8;
     ctx.fillStyle = '#ff6565';
     ctx.font = `bold ${isMobile ? 24 : 36}px "Space Grotesk", sans-serif`;
     ctx.textAlign = 'center';
@@ -136,7 +137,7 @@ onMounted(() => {
     ctx.fillText('PAO', 0, isMobile ? 10 : 20);
     
     // Subtext Details
-    ctx.filter = 'none';
+    ctx.shadowBlur = 0; 
     ctx.fillStyle = '#666';
     ctx.font = '10px "Outfit", sans-serif';
     ctx.fillText('ESP32-WROOM', 0, 55);

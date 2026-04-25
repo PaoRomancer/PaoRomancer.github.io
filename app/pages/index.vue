@@ -83,7 +83,7 @@
         <!-- Bottom Action CTA -->
         <div class="mt-auto relative z-10">
           
-          <a href="/cv/natthawitresume.pdf" target="_blank" class="w-full py-4 rounded-2xl border border-gray-800 text-gray-400 text-xs font-bold uppercase tracking-widest hover:border-[#ff6565] hover:text-[#ff6565] hover:bg-[#ff6565]/10 transition-all duration-300 flex items-center justify-center gap-2 group">
+          <a href="/pdf/natthawitresume.pdf" target="_blank" class="w-full py-4 rounded-2xl border border-gray-800 text-gray-400 text-xs font-bold uppercase tracking-widest hover:border-[#ff6565] hover:text-[#ff6565] hover:bg-[#ff6565]/10 transition-all duration-300 flex items-center justify-center gap-2 group">
               <svg class="w-4 h-4 group-hover:-translate-y-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
               Download CV
           </a>
@@ -100,7 +100,7 @@
       </div>
       
       <!-- HOME SECTION -->
-      <section id="home" class="w-full min-h-screen flex flex-col xl:flex-row items-center justify-between p-10 xl:p-20 relative z-10">
+      <section id="home" class="w-full min-h-screen flex flex-col xl:flex-row items-center justify-between p-6 sm:p-10 xl:p-20 pt-20 xl:pt-20 relative z-10">
         <div class="max-w-2xl w-full xl:pr-12 relative z-10 gsap-fade-up">
           <div class="flex items-center gap-3 mb-6">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400">
@@ -109,12 +109,12 @@
             <p class="text-gray-300 text-lg">Hey there. I'm</p>
           </div>
 
-          <h1 class="text-6xl md:text-8xl font-serif leading-[1.1] mb-6 tracking-wide">
+          <h1 class="text-4xl sm:text-6xl md:text-8xl font-serif leading-[1.1] mb-6 tracking-wide">
             AUNG-PAO<br />
             <span class="text-[#ff6565]">NATTHAWIT</span>
           </h1>
 
-          <p class="text-gray-400 text-lg md:text-xl max-w-lg leading-relaxed mb-10">
+          <p class="text-gray-400 text-sm sm:text-base md:text-xl max-w-lg leading-relaxed mb-8">
             Engineering cyber-physical operations. Deeply passionate about IoT systems, applied Artificial Intelligence, and advancing Network Security infrastructure.
           </p>
 
@@ -128,21 +128,22 @@
           </button>
         </div>
 
-        <div class="bg-[#181818] p-5 rounded-[2.5rem] w-full max-w-[420px] flex flex-col items-center border border-gray-800 shadow-2xl mt-16 xl:mt-0 relative z-10 group gsap-fade-up">
+        <div class="bg-[#181818] p-4 sm:p-5 rounded-[2rem] sm:rounded-[2.5rem] w-full max-w-[340px] sm:max-w-[420px] flex flex-col items-center border border-gray-800 shadow-2xl mt-8 xl:mt-0 relative z-10 group gsap-fade-up">
           <div class="absolute -inset-4 bg-gradient-to-r from-[#ff6565]/20 to-transparent opacity-0 group-hover:opacity-100 blur-2xl transition-opacity duration-700 -z-10"></div>
           
-          <div id="home-portrait-wrapper" class="w-full aspect-[4/5] bg-gray-800 rounded-[2rem] overflow-hidden mb-6 relative">
-            <!-- First Image (Static base with parallax) -->
-            <img src="/images/profile1.jpg" 
-                 alt="Natthawit Portrait 1" 
-                 class="parallax-img absolute origin-top -top-[15%] w-full h-[130%] object-cover cursor-pointer" />
-            
-            <!-- Second Image (Slides up on scroll) -->
-            <div class="portrait-slide-wrapper absolute inset-0 overflow-hidden translate-y-full z-10">
+          <div id="home-portrait-wrapper" class="w-full aspect-[4/5] bg-gray-800 rounded-[2rem] overflow-hidden mb-6 relative border border-gray-800/50">
+            <!-- Side-by-side sliding container -->
+            <div class="portrait-main-slide flex h-full w-[200%] -translate-x-1/2">
               <img src="/images/profile2.jpg" 
                    alt="Natthawit Portrait 2" 
-                   class="parallax-img absolute origin-top -top-[15%] w-full h-[130%] object-cover cursor-pointer" />
+                   class="w-1/2 h-full object-cover" />
+              <img src="/images/profile1.jpg" 
+                   alt="Natthawit Portrait 1" 
+                   class="w-1/2 h-full object-cover" />
             </div>
+            
+            <!-- Decorative Overlay -->
+            <div class="absolute inset-0 pointer-events-none border-[12px] border-[#181818] rounded-[2rem] z-20"></div>
           </div>
 
           <div class="flex gap-4 mb-2">
@@ -155,7 +156,7 @@
       </section>
 
       <!-- ABOUT SECTION (Slide Tabs) -->
-      <section id="aboutme" class="w-full min-h-screen flex flex-col justify-center relative z-10 p-10 xl:p-20 bg-[#060606]/90 backdrop-blur-3xl border-t border-gray-800/60 overflow-hidden">
+      <section id="aboutme" class="w-full min-h-screen flex flex-col justify-center relative z-10 p-6 sm:p-10 xl:p-20 bg-[#060606]/90 backdrop-blur-3xl border-t border-gray-800/60 overflow-hidden">
         
         <!-- Subtle Tech Grid Background -->
         <div class="absolute inset-0 bg-tech-grid pointer-events-none opacity-40"></div>
@@ -166,22 +167,22 @@
         <div class="max-w-5xl w-full mx-auto flex flex-col gap-12 relative z-10 gsap-fade-up">
           
           <!-- Header and Tabs Container -->
-          <div class="flex flex-col md:flex-row items-start md:items-end justify-between border-b border-gray-800 pb-8 gap-8">
-            <h2 class="text-5xl md:text-7xl font-serif font-bold text-white tracking-widest uppercase dev-title">
+          <div class="flex flex-col items-start justify-between border-b border-gray-800 pb-6 gap-4">
+            <h2 class="text-4xl sm:text-5xl md:text-7xl font-serif font-bold text-white tracking-widest uppercase dev-title">
               <span class="dev-type-line">About</span><br/>
               <span class="dev-type-line text-[#ff6565]">Me.</span>
             </h2>
             
             <!-- Tab Controls -->
-            <div class="flex bg-[#111]/80 backdrop-blur-md p-1.5 rounded-full border border-gray-800 relative shadow-xl overflow-hidden shrink-0">
+            <div class="flex bg-[#111]/80 backdrop-blur-md p-1 rounded-full border border-gray-800 relative shadow-xl overflow-hidden shrink-0 self-start">
               <!-- Active Slide Pill using absolute positioning and translateX -->
-              <div class="absolute top-1.5 bottom-1.5 w-[calc(33.33%-4px)] bg-[#ff6565] rounded-full transition-transform duration-500 shadow-[0_0_15px_rgba(255,101,101,0.5)]"
-                   :style="{ transform: `translateX(${tabs.indexOf(activeTab) * 100}%)`, left: '6px' }"></div>
+              <div class="absolute top-1 bottom-1 w-[calc(33.33%-2px)] bg-[#ff6565] rounded-full transition-transform duration-500 shadow-[0_0_15px_rgba(255,101,101,0.5)]"
+                   :style="{ transform: `translateX(${tabs.indexOf(activeTab) * 100}%)`, left: '4px' }"></div>
                    
               <button 
                 v-for="tab in tabs" :key="tab"
                 @click="activeTab = tab"
-                class="relative px-4 xl:px-8 py-3 text-[10px] sm:text-xs xl:text-sm font-bold tracking-widest uppercase rounded-full transition-colors duration-500 z-10 w-28 sm:w-32 xl:w-40"
+                class="relative px-3 sm:px-5 py-2 text-[9px] sm:text-[10px] font-bold tracking-widest uppercase rounded-full transition-colors duration-500 z-10 w-20 sm:w-24"
                 :class="activeTab === tab ? 'text-black' : 'text-gray-400 hover:text-white'"
               >
                 {{ tab }}
@@ -190,7 +191,7 @@
           </div>
 
           <!-- Tab Contents Wrapper -->
-          <div class="min-h-[450px] relative mt-4">
+          <div class="min-h-[400px] sm:min-h-[450px] relative mt-4">
             <Transition name="fade-slide" mode="out-in">
               
               <!-- 1. ABOUT ME TAB -->
@@ -304,24 +305,36 @@
       </section>
 
       <!-- PROJECTS SECTION -->
-      <section id="projects" class="w-full min-h-screen flex flex-col relative z-10 p-10 xl:p-20 bg-[#060606] border-t border-gray-800/60 overflow-hidden">
+      <section id="projects" class="w-full min-h-screen flex flex-col relative z-10 p-6 sm:p-10 xl:p-20 bg-[#060606] border-t border-gray-800/60 overflow-hidden">
         
         <div class="max-w-6xl w-full mx-auto flex flex-col gap-12 relative z-10 my-auto">
           
-          <div class="flex flex-col md:flex-row items-start md:items-end justify-between border-b border-gray-800 pb-6 gap-6 gsap-fade-up">
-            <h2 class="text-5xl md:text-7xl font-serif font-bold text-white tracking-widest uppercase dev-title">
+          <div class="flex flex-col items-start justify-between border-b border-gray-800 pb-6 gap-4 gsap-fade-up">
+            <h2 class="text-4xl sm:text-5xl md:text-7xl font-serif font-bold text-white tracking-widest uppercase dev-title">
               <span class="dev-type-line">My</span><br/>
               <span class="dev-type-line text-[#ff6565]">Projects.</span>
             </h2>
-            <div class="flex items-center gap-4 text-[#ff6565] font-mono text-xs xl:text-sm tracking-widest bg-[#ff6565]/10 px-5 py-2.5 rounded-full border border-[#ff6565]/20 shadow-[0_0_15px_rgba(255,101,101,0.2)]">
-              <span class="animate-pulse w-2 h-2 rounded-full bg-[#ff6565]"></span>
-              SYSTEM_MODULES
+            <!-- Project Category Selector (Replaced SYSTEM_MODULES) -->
+            <div class="flex bg-[#111]/80 backdrop-blur-md p-1 rounded-full border border-gray-800 relative shadow-xl overflow-hidden shrink-0 self-start">
+              <!-- Active Slide Pill -->
+              <div class="absolute top-1 bottom-1 w-[calc(33.33%-2px)] bg-[#ff6565] rounded-full transition-transform duration-500 shadow-[0_0_15px_rgba(255,101,101,0.4)]"
+                   :style="{ transform: `translateX(${projectCategories.indexOf(selectedProjectCategory) * 100}%)`, left: '1px' }"></div>
+                   
+              <button 
+                v-for="cat in projectCategories" :key="cat"
+                @click="selectedProjectCategory = cat"
+                class="relative px-5 py-2 text-[10px] font-bold tracking-widest uppercase rounded-full transition-colors duration-500 z-10 w-24 sm:w-28"
+                :class="selectedProjectCategory === cat ? 'text-black' : 'text-gray-400 hover:text-white'"
+              >
+                {{ cat }}
+              </button>
             </div>
           </div>
 
           <!-- Projects Grid -->
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div v-for="(project, index) in projects" :key="index" class="group relative bg-[#111] rounded-[2rem] overflow-hidden transition-all duration-500 shadow-2xl gsap-fade-up">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 min-h-[400px]">
+            <TransitionGroup name="fade-slide">
+              <div v-for="(project, index) in filteredProjects" :key="project.title" class="group relative bg-[#111] rounded-[2rem] overflow-hidden transition-shadow duration-500 shadow-2xl gsap-fade-up will-change-transform transform-gpu flex flex-col">
               
               <!-- Red Accent Line (Like Award Section) -->
               <div class="absolute top-0 bottom-0 left-0 w-1.5 bg-[#ff6565] z-30 transition-transform duration-500 group-hover:scale-y-110"></div>
@@ -330,8 +343,8 @@
               <div class="absolute inset-0 bg-gradient-to-b from-[#ff6565]/0 to-[#ff6565]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10"></div>
 
               <!-- Project Image -->
-              <div class="h-56 w-full bg-gray-800 relative overflow-hidden group-hover:bg-gray-700 transition-colors">
-                <img v-if="project.image" :src="project.image" alt="Project Mockup" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110" />
+              <div class="h-56 w-full bg-gray-800 relative overflow-hidden group-hover:bg-gray-700 transition-colors shrink-0">
+                <img v-if="project.image" :src="project.image" alt="Project Mockup" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
                 <div v-else class="w-full h-full flex items-center justify-center text-gray-600 font-mono text-xs tracking-widest">NO_IMAGE_DATA</div>
                 
                 <!-- Category Tag -->
@@ -341,7 +354,7 @@
               </div>
 
               <!-- Content Area -->
-              <div class="p-8 relative z-20">
+              <div class="p-8 relative z-20 flex-1 flex flex-col">
                 <div class="flex items-center gap-3 mb-4">
                   <span class="text-gray-500 font-mono text-[10px] uppercase">P.{{ String(index + 1).padStart(2, '0') }}</span>
                   <div class="h-px w-8 bg-gray-700"></div>
@@ -350,21 +363,31 @@
                 <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-[#ff6565] transition-colors leading-tight font-serif">{{ project.title }}</h3>
                 <p class="text-sm text-gray-400 leading-relaxed mb-8 line-clamp-3">{{ project.description }}</p>
                 
-                <!-- Action Link -->
-                <button type="button" @click="openProjectModal(project)" class="inline-flex items-center outline-none gap-2 text-[10px] font-bold text-gray-300 group-hover:text-white transition-colors uppercase tracking-widest">
-                  Explore Module
-                  <svg class="w-4 h-4 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                <!-- Action Link (Redesigned UI - Smaller & Bottom Aligned) -->
+                <button type="button" @click="openProjectModal(project)" 
+                        class="w-full mt-auto flex items-center justify-between px-5 py-3 rounded-xl bg-white/5 border border-white/10 hover:border-[#ff6565]/50 hover:bg-[#ff6565]/10 transition-all duration-300 group/btn shadow-xl overflow-hidden relative outline-none">
+                  <!-- Animated background shimmer -->
+                  <div class="absolute inset-0 bg-gradient-to-r from-transparent via-[#ff6565]/5 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000 ease-in-out pointer-events-none"></div>
+                  
+                  <span class="text-[9px] font-bold text-gray-400 group-hover/btn:text-white uppercase tracking-[0.2em] transition-colors relative z-10">Explore Module</span>
+                  
+                  <div class="flex items-center justify-center w-8 h-8 rounded-full bg-white/5 border border-white/10 group-hover/btn:bg-[#ff6565] group-hover/btn:border-[#ff6565] group-hover/btn:text-black transition-all duration-300 relative z-10">
+                    <svg class="w-4 h-4 transform group-hover/btn:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </div>
                 </button>
               </div>
 
             </div>
+          </TransitionGroup>
           </div>
 
         </div>
       </section>
 
       <!-- AWARD SECTION -->
-      <section id="award" class="w-full min-h-screen flex flex-col justify-center relative z-10 p-10 xl:p-20 bg-[#060606] border-t border-gray-800/60">
+      <section id="award" class="w-full min-h-screen flex flex-col justify-center relative z-10 p-6 sm:p-10 xl:p-20 bg-[#060606] border-t border-gray-800/60">
         
         <!-- Decoration light/grid -->
         <div class="absolute inset-0 bg-tech-grid opacity-[0.15] pointer-events-none"></div>
@@ -372,7 +395,7 @@
         <div class="max-w-5xl w-full mx-auto flex flex-col gap-12 relative z-10">
           
           <div class="flex flex-col md:flex-row items-start md:items-end justify-between border-b border-gray-800 pb-6 gap-6 gsap-fade-up">
-            <h2 class="text-5xl md:text-7xl font-serif font-bold text-white tracking-widest uppercase dev-title">
+            <h2 class="text-4xl sm:text-5xl md:text-7xl font-serif font-bold text-white tracking-widest uppercase dev-title">
               <span class="dev-type-line">Honors &</span><br/>
               <span class="dev-type-line text-[#ff6565]">Awards.</span>
             </h2>
@@ -385,11 +408,11 @@
           <!-- Awards Stacking Scroll Cards -->
           <div id="award-wrapper" class="relative z-10 w-full mt-10 pb-[30vh]">
             <div v-for="(award, index) in awards" :key="index" 
-                 class="award-card sticky w-full h-[50vh] min-h-[350px] mb-8 flex flex-col md:flex-row overflow-hidden rounded-[2rem] bg-[#111] border border-gray-800 shadow-[0_10px_30px_rgba(0,0,0,0.8)] origin-top will-change-transform"
-                 :style="{ top: (120 + index * 10) + 'px', zIndex: index }">
+                 class="award-card sticky w-full min-h-[320px] md:h-[50vh] md:min-h-[350px] mb-8 flex flex-col md:flex-row overflow-hidden rounded-[2rem] bg-[#111] border border-gray-800 shadow-[0_10px_30px_rgba(0,0,0,0.8)] origin-top will-change-transform"
+                 :style="{ top: (80 + index * 10) + 'px', zIndex: index }">
                  
               <!-- Left Info -->
-              <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center relative bg-gradient-to-br from-[#111] to-[#0a0a0a]">
+              <div class="w-full md:w-1/2 p-6 sm:p-8 md:p-12 flex flex-col justify-center relative bg-gradient-to-br from-[#111] to-[#0a0a0a]">
                 <div class="absolute top-0 bottom-0 left-0 w-2 bg-[#ff6565]"></div>
                 <!-- Top Badge -->
                 <div class="flex items-center gap-2 mb-6">
@@ -397,9 +420,9 @@
                   <span class="text-gray-500 font-mono text-xs tracking-widest uppercase">Honored in</span>
                 </div>
                 
-                <span class="text-[#ff6565] font-serif text-5xl md:text-6xl font-bold mb-4 drop-shadow-[0_0_15px_rgba(255,101,101,0.3)]">{{ award.year }}</span>
-                <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight font-serif">{{ award.title }}</h3>
-                <p class="text-gray-400 font-mono text-xs md:text-sm tracking-widest uppercase mb-8 opacity-80">{{ award.organization }}</p>
+                <span class="text-[#ff6565] font-serif text-4xl sm:text-5xl md:text-6xl font-bold mb-2 drop-shadow-[0_0_15px_rgba(255,101,101,0.3)]">{{ award.year }}</span>
+                <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 leading-tight font-serif">{{ award.title }}</h3>
+                <p class="text-gray-400 font-mono text-[10px] sm:text-xs md:text-sm tracking-widest uppercase mb-4 opacity-80">{{ award.organization }}</p>
 
                 <!-- Deco lines -->
                 <div class="flex items-center gap-2 max-w-[200px] mb-6">
@@ -418,7 +441,7 @@
               <div @click="openAwardModal(award)" 
                    @mousemove="handleAwardMouseMove"
                    @mouseleave="handleAwardMouseLeave"
-                   class="w-full md:w-1/2 h-64 md:h-full relative overflow-hidden bg-black group flex items-center justify-center cursor-pointer">
+                   class="w-full md:w-1/2 h-48 sm:h-56 md:h-full relative overflow-hidden bg-black group flex items-center justify-center cursor-pointer">
                  <img v-if="award.image" :src="award.image" class="absolute inset-0 w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-110 pointer-events-none" />
                  
                  <!-- Hover Backdrop -->
@@ -448,13 +471,13 @@
       </section>
 
       <!-- CONTACT SECTION -->
-      <section id="contact" class="w-full min-h-screen flex flex-col justify-center relative z-10 p-10 xl:p-20 bg-[#060606] border-t border-[#ff6565]/20 overflow-hidden pb-32">
+      <section id="contact" class="w-full min-h-screen flex flex-col justify-center relative z-10 p-6 sm:p-10 xl:p-20 bg-[#060606] border-t border-[#ff6565]/20 overflow-hidden pb-24 sm:pb-32">
         
         <!-- Background elements -->
         <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-[#ff6565]/10 via-[#060606] to-[#060606] pointer-events-none"></div>
 
         <div class="max-w-6xl w-full mx-auto relative z-10 gsap-fade-up">
-          <div class="flex flex-col lg:flex-row items-center gap-16">
+          <div class="flex flex-col lg:flex-row items-center gap-8 sm:gap-16">
             
             <!-- Left Info & Terminal Log -->
             <div class="w-full lg:w-1/2 flex flex-col gap-8">
@@ -463,7 +486,7 @@
                   <span class="w-2 h-2 rounded-sm bg-[#ff6565] animate-pulse"></span>
                   OPEN CONNECTION
                 </div>
-                <h2 class="text-5xl md:text-7xl font-serif font-bold text-white tracking-widest uppercase mb-6 leading-tight dev-title">
+                <h2 class="text-4xl sm:text-5xl md:text-7xl font-serif font-bold text-white tracking-widest uppercase mb-4 sm:mb-6 leading-tight dev-title">
                   <span class="dev-type-line">Get In</span><br/>
                   <span class="dev-type-line text-[#ff6565]">Contact.</span>
                 </h2>
@@ -590,17 +613,17 @@
         <div class="absolute inset-0 bg-[#0a0a0a]/90 backdrop-blur-xl" @click="closeAwardModal"></div>
         
         <!-- Modal Content -->
-        <div class="relative bg-[#111] border border-gray-800 rounded-[2rem] w-full max-w-4xl max-h-[90vh] overflow-y-auto shadow-[0_0_50px_rgba(255,101,101,0.1)] flex flex-col md:flex-row transform transition-all">
+        <div class="relative bg-[#111] border border-gray-800 rounded-[2rem] w-full max-w-6xl max-h-[90vh] overflow-y-auto shadow-[0_0_50px_rgba(255,101,101,0.1)] flex flex-col md:flex-row transform transition-all">
           
           <!-- Close Btn -->
           <button @click="closeAwardModal" class="absolute top-4 right-4 md:top-6 md:right-6 w-10 h-10 bg-black/50 hover:bg-[#ff6565] text-white hover:text-black rounded-full flex items-center justify-center transition-colors z-20 backdrop-blur-md border border-gray-700">
             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
           </button>
 
-          <!-- Left Image -->
-          <div class="w-full md:w-1/2 min-h-[250px] md:min-h-[400px] bg-gray-900 overflow-hidden relative">
+          <!-- Left Image (Horizontal Optimized) -->
+          <div class="w-full md:w-1/2 bg-black/20 overflow-hidden relative flex items-center justify-center border-r border-gray-800/50 min-h-[300px]">
              <div class="absolute inset-0 bg-gradient-to-t from-[#111] via-transparent to-transparent z-10 md:hidden"></div>
-             <img v-if="selectedAward?.image" :src="selectedAward?.image" class="w-full h-full object-cover opacity-80" />
+             <img v-if="selectedAward?.image" :src="selectedAward?.image" class="w-full h-full object-contain p-4 md:p-12" />
              <div v-else class="w-full h-full flex items-center justify-center text-gray-600 font-mono text-xs">NO_IMAGE</div>
           </div>
 
@@ -626,7 +649,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import gsap from 'gsap'
 
 const navItems = ['Home', 'About me', 'Projects', 'Award', 'Contact']
@@ -697,6 +720,14 @@ let binaryInterval
 
 // Nav Active State
 const activeNav = ref('Home')
+
+// Project Filtering State
+const projectCategories = ['University', 'Work', 'DIY']
+const selectedProjectCategory = ref('University')
+
+const filteredProjects = computed(() => {
+  return projects.filter(p => p.category === selectedProjectCategory.value)
+})
 
 // Mobile Menu State
 const isMobileMenuOpen = ref(false)
@@ -822,8 +853,8 @@ onMounted(() => {
           scrollTrigger: {
             trigger: el,
             scroller: "#main-scroll",
-            start: "top 85%", // when top of element hits 85% of viewport
-            toggleActions: "play none none reverse", // play forward on enter, reverse on leave back
+            start: "top 90%", // Trigger slightly earlier for smoother entry
+            toggleActions: "play none none none", // Only play once to prevent flickering on scroll back
           }
         });
       });
@@ -878,31 +909,31 @@ onMounted(() => {
         }
       });
 
-      // Slide Up Home Portrait on Scroll
-      gsap.to('.portrait-slide-wrapper', {
-        y: 0,
-        ease: "power2.out",
+      // Slide & Fade Left-to-Right Home Portrait (Trigger based)
+      gsap.set('.portrait-main-slide', { xPercent: -50 });
+      
+      const portraitTl = gsap.timeline({
         scrollTrigger: {
           trigger: "#home",
           scroller: "#main-scroll",
-          start: "top top",         
-          end: "bottom center", 
-          scrub: 2,
+          start: "top -5%",
+          toggleActions: "play none none reverse",
         }
       });
 
-      // Parallax Image Effect
-      gsap.to('.parallax-img', {
-        yPercent: 15,
-        ease: "none",
-        scrollTrigger: {
-          trigger: "#home",
-          scroller: "#main-scroll",
-          start: "top top",
-          end: "bottom top", // Parallax completes when the Home section entirely leaves the screen
-          scrub: 1.5,
-        }
-      });
+      portraitTl.to('.portrait-main-slide', {
+        xPercent: 0,
+        duration: 0.9,
+        ease: "expo.inOut"
+      })
+      .from('.portrait-main-slide img:first-child', {
+        opacity: 0,
+        scale: 1.1,
+        duration: 0.9,
+        ease: "expo.inOut"
+      }, 0);
+
+
 
     });
   }
@@ -963,39 +994,69 @@ const skills = [
 const projects = [
   {
     title: 'Automatic Audio Gain Adjustment System Based on Real Time Crowd Density',
-    category: 'IoT / Hardware',
+    category: 'University',
     description: 'Team Projects 2 - Automatic Audio Gain Adjustment System Based on Real Time Crowd Density',
-    image: '/images/proj1.png',
-    link: '/pdf/proj1.pdf'
+    image: '/images/proj1.1.png',
+    link: '/pdf/proj1.1.pdf'
   },
   {
     title: 'iote.kmitl.ac.th new website mock up',
-    category: 'UI / Website',
+    category: 'University',
     description: 'The IoTE Website proposes a modernized, mobile-friendly platform for KMITL’s IoT and Information Engineering department. Key features include interactive study roadmaps, internship portals, and senior review forums. Built with Nuxt.js and MySQL, it aims to boost user engagement and streamline academic management.',
     image: '/images/proj2.png',
     link: 'https://67010635.consolutechcloud.com/'
   },
   {
-    title: 'Touchless Audio Control',
-    category: 'UI / Embedded',
+    title: 'PinyoPlay: Touchless Audio Control',
+    category: 'University',
     description: 'The touchless voice control system uses gesture sensors to perform actions such as adjusting volume, playing/pausing, and changing tracks. Processing is done via a microprocessor and displayed on an LCD screen. Designed for the elderly, it reduces complexity, reduces risk, and increases convenience, with customizable settings.',
-    image: '/images/proj3.jpg',
+    image: '/images/proj3.png',
     link: '/pdf/PinyoPlay Touchless Audio Control.pdf'
   },
   {
     title: 'WattsUp: Smart Energy Monitoring System',
-    category: 'IoT / Hardware',
+    category: 'University',
     description: 'The WattsUp: Smart Energy Monitoring System is a smart energy management solution designed to monitor and control household power consumption in real time. It uses an ESP32 microcontroller connected to a PZEM-004T V3.0 sensor to measure voltage, current, power, and energy consumption.',
-    image: '/images/proj4.jpg',
+    image: '/images/proj4.1.jpg',
     link: '/pdf/proj4.pdf'
   },
   {
-    title: 'DoorKeeper',
-    category: 'IoT / Hardware',
+    title: 'DoorKeeper: Smart Door Lock Guard',
+    category: 'University',
     description: 'Monitoring | Count the number of people entering/exiting and display the results via the Dashboard in real time. Controlling | Can control the opening and closing remotely via the dashboard. Data Storage | Store the name and time of people entering/exiting in Google Sheet. Notification | Notify via Line Notify',
     image: '/images/proj5.png',
-    link: 'https://github.com/PaoRomancer/DoorKeeper'
+    link: '/pdf/DoorKeeper.pdf'
   },
+  // Work Samples
+  /*{
+    title: 'Industrial IoT Dashboard',
+    category: 'Work',
+    description: 'Real-time monitoring system for factory production lines, tracking machine efficiency and environmental parameters using MQTT and high-performance data visualization.',
+    image: '/images/proj1.1.png', // Sample placeholder
+    link: '#'
+  },
+  {
+    title: 'Asset Tracking System',
+    category: 'Work',
+    description: 'A cloud-based inventory management platform using RFID and BLE technology to track high-value assets across multiple locations in real-time.',
+    image: '/images/proj2.png', // Sample placeholder
+    link: '#'
+  },
+  // DIY Samples
+  {
+    title: 'Smart Garden Ecosystem',
+    category: 'DIY',
+    description: 'An automated home gardening system built with ESP32, featuring soil moisture analysis, automated irrigation, and a mobile app interface for remote control.',
+    image: '/images/proj3.png', // Sample placeholder
+    link: '#'
+  },
+  {
+    title: 'Custom Macro Pad',
+    category: 'DIY',
+    description: 'A fully custom 3D-printed macro pad with mechanical switches and OLED display, running on QMK firmware with personalized layer configurations.',
+    image: '/images/proj4.1.jpg', // Sample placeholder
+    link: '#'
+  } */
 ]
 
 // ------------------------------------
@@ -1016,8 +1077,8 @@ const awards = [
   },
   {
     year: '2023',
-    title: 'untitle',
-    organization: 'untitle',
+    title: 'Join in Young Game Dev CAMT Chang Mai University',
+    organization: 'Chang Mai University',
     image: '/images/award3.jpg'
   }
 ]
@@ -1127,5 +1188,18 @@ main::-webkit-scrollbar-thumb:hover {
 @keyframes blink-caret {
   0%, 100% { border-color: transparent }
   50% { border-color: #ff6565; }
+}
+
+/* Performance optimizations for animated elements */
+.gsap-fade-up {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+/* Ensure smooth image scaling */
+.group:hover img {
+  transform: scale(1.1) translateZ(0);
 }
 </style>
