@@ -815,6 +815,16 @@
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import gsap from 'gsap'
 
+// --- SEO & Web Title ---
+useSeoMeta({
+  title: 'Natthawit',
+  ogTitle: 'Natthawit | Engineering & IoT Portfolio',
+  description: 'Engineering cyber-physical operations. Deeply passionate about IoT systems, AI, and Network Security.',
+  ogDescription: 'Explore the projects and skills of Natthawit, an IoT and Web Engineer.',
+  ogImage: '/images/profile2.jpg',
+  twitterCard: 'summary_large_image',
+})
+
 const navItems = ['Home', 'About me', 'Projects', 'Award', 'Contact']
 
 // ------------------------------------
