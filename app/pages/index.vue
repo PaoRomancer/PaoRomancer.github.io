@@ -100,38 +100,47 @@
       </div>
       
       <!-- HOME SECTION -->
-      <section id="home" class="w-full min-h-screen flex flex-col xl:flex-row items-center justify-between p-6 sm:p-10 xl:p-20 pt-20 xl:pt-20 relative z-10">
-        <div class="max-w-2xl w-full xl:pr-12 relative z-10 gsap-fade-up">
-          <div class="flex items-center gap-3 mb-6">
+      <section id="home" class="w-full min-h-screen flex flex-col xl:flex-row items-center justify-between p-6 sm:p-10 xl:p-20 pt-20 xl:pt-20 relative z-10 overflow-hidden">
+        
+        <!-- Animated Background Decor -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-[#ff6565]/5 rounded-full blur-[100px] home-blob-1 pointer-events-none"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-[#ff6565]/10 rounded-full blur-[120px] home-blob-2 pointer-events-none"></div>
+
+        <div class="max-w-2xl w-full xl:pr-12 relative z-10">
+          <div class="flex items-center gap-3 mb-6 home-fade-in" style="animation-delay: 0.2s">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400">
               <path stroke-linecap="round" stroke-linejoin="round" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
             </svg>
-            <p class="text-gray-300 text-lg">Hey there. I'm</p>
+            <p class="text-gray-300 text-lg font-mono tracking-tighter">/ INITIALIZING_IDENTITY...</p>
           </div>
 
-          <h1 class="text-4xl sm:text-6xl md:text-8xl font-serif leading-[1.1] mb-6 tracking-wide">
-            AUNG-PAO<br />
-            <span class="text-[#ff6565]">NATTHAWIT</span>
+          <h1 class="text-4xl sm:text-6xl md:text-8xl font-serif leading-[1.1] mb-6 tracking-wide home-title-reveal">
+            <span class="block overflow-hidden"><span class="block">AUNG-PAO</span></span>
+            <span class="text-[#ff6565] block overflow-hidden"><span class="block">NATTHAWIT</span></span>
           </h1>
 
-          <p class="text-gray-400 text-sm sm:text-base md:text-xl max-w-lg leading-relaxed mb-8">
-            Engineering cyber-physical operations. Deeply passionate about IoT systems, applied Artificial Intelligence, and advancing Network Security infrastructure.
+          <p class="text-gray-400 text-sm sm:text-base md:text-xl max-w-lg leading-relaxed mb-8 home-fade-in" style="animation-delay: 0.8s">
+            Engineering cyber-physical operations. Deeply passionate about <span class="text-white">IoT systems</span>, applied <span class="text-white">Artificial Intelligence</span>, and advancing <span class="text-white">Network Security</span> infrastructure.
           </p>
 
-
-
-          <button class="bg-[#ff6565] text-black px-8 py-4 rounded-full font-bold hover:bg-white hover:-translate-y-1 transition-all duration-300 flex items-center gap-3 shadow-[0_0_20px_rgba(255,101,101,0.3)]">
-            <a href="#projects">See My Projects</a> 
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </button>
+          <div class="home-fade-in" style="animation-delay: 1.1s">
+            <button class="bg-[#ff6565] text-black px-8 py-4 rounded-full font-bold hover:bg-white hover:-translate-y-1 transition-all duration-300 flex items-center gap-3 shadow-[0_0_20px_rgba(255,101,101,0.3)] group home-btn-glow">
+              <a href="#projects">See My Projects</a> 
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </button>
+          </div>
         </div>
 
-        <div class="bg-[#181818] p-4 sm:p-5 rounded-[2rem] sm:rounded-[2.5rem] w-full max-w-[340px] sm:max-w-[420px] flex flex-col items-center border border-gray-800 shadow-2xl mt-8 xl:mt-0 relative z-10 group gsap-fade-up">
+        <!-- Profile Card with Floating Animation -->
+        <div class="bg-[#181818] p-4 sm:p-5 rounded-[2rem] sm:rounded-[2.5rem] w-full max-w-[340px] sm:max-w-[420px] flex flex-col items-center border border-gray-800 shadow-2xl mt-8 xl:mt-0 relative z-10 group home-card-float">
           <div class="absolute -inset-4 bg-gradient-to-r from-[#ff6565]/20 to-transparent opacity-0 group-hover:opacity-100 blur-2xl transition-opacity duration-700 -z-10"></div>
           
           <div id="home-portrait-wrapper" class="w-full aspect-[4/5] bg-gray-800 rounded-[2rem] overflow-hidden mb-6 relative border border-gray-800/50">
+            <!-- Scanning Line Effect -->
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#ff6565] to-transparent z-30 home-scanner"></div>
+            
             <!-- Side-by-side sliding container -->
             <div class="portrait-main-slide flex h-full w-[200%] -translate-x-1/2">
               <img src="/images/profile2.jpg" 
@@ -143,12 +152,13 @@
             </div>
             
             <!-- Decorative Overlay -->
-            <div class="absolute inset-0 pointer-events-none border-[12px] border-[#181818] rounded-[2rem] z-20"></div>
+            <div class="absolute inset-0 pointer-events-none rounded-[2rem] z-20 bg-gradient-to-t from-black/40 to-transparent"></div>
           </div>
 
           <div class="flex gap-4 mb-2">
-            <a v-for="social in socials" :key="social.name" :href="social.link" 
-               class="w-12 h-12 bg-[#2a2a2a] rounded-full flex items-center justify-center hover:bg-[#ff6565] hover:text-black transition-all duration-300 text-gray-300 shadow-md">
+            <a v-for="(social, idx) in socials" :key="social.name" :href="social.link" 
+               class="w-12 h-12 bg-[#2a2a2a] rounded-full flex items-center justify-center hover:bg-[#ff6565] hover:text-black transition-all duration-300 text-gray-300 shadow-md home-social-pop"
+               :style="{ animationDelay: (1.5 + idx * 0.1) + 's' }">
                <span v-html="social.svg" class="w-5 h-5"></span>
             </a>
           </div>
@@ -194,19 +204,85 @@
           <div class="min-h-[400px] sm:min-h-[450px] relative mt-4">
             <Transition name="fade-slide" mode="out-in">
               
-              <!-- 1. ABOUT ME TAB -->
-              <div v-if="activeTab === 'About'" class="grid grid-cols-1 lg:grid-cols-2 gap-12 text-gray-400 text-lg leading-relaxed absolute w-full">
-                <div class="flex flex-col gap-6">
-                  <p><strong class="text-white text-2xl font-serif tracking-wide">Hello, I'm Natthawit.</strong> <br/>A dedicated engineer architecting cyber-physical operations, bridging the gap between hardware intelligence and digital ecosystems.</p>
-                  <p>My journey started with hacking ESP32 microcontrollers and has evolved into engineering high-performance web applications capable of managing real-time data flow perfectly for IoT systems.</p>
-                  <p>I blend hardware logic with software elegance, creating technology solutions that are as robust conceptually as they are visually.</p>
+              <!-- 1. ABOUT ME TAB — REDESIGNED WITH KEYFRAMES -->
+              <div v-if="activeTab === 'About'" class="about-me-panel absolute w-full">
+
+                <!-- === FLOATING AMBIENT PARTICLES === -->
+                <div class="about-particles" aria-hidden="true">
+                  <span v-for="n in 12" :key="n" class="particle" :style="{ '--i': n }"></span>
                 </div>
-                <!-- Tech Badge Goal Block -->
-                <div class="bg-[#111] p-8 rounded-[2rem] border border-gray-800 relative group overflow-hidden h-fit shadow-2xl">
-                  <div class="absolute -right-10 -top-10 w-32 h-32 bg-[#ff6565]/20 blur-[40px] rounded-full transition-transform duration-700 group-hover:scale-150"></div>
-                  <h3 class="text-white text-xl font-bold mb-4 font-serif relative z-10">Core Objective 🚀</h3>
-                  <p class="text-sm text-gray-400 relative z-10">To construct scalable platforms that simplify complex IoT infrastructures using modern web frameworks and reactive programming paradigms, ensuring smooth and flawless experiences.</p>
+
+                <!-- === TOP ROW: Glitch Headline + Identity Card === -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-10">
+
+                  <!-- Left: Bio Text with animated entrance -->
+                  <div class="flex flex-col gap-5 about-bio">
+                    <!-- Glitch tag line -->
+                    <div class="glitch-wrapper">
+                      <span class="glitch-tag" data-text="&lt;ENGINEER /&gt;">&lt;ENGINEER /&gt;</span>
+                    </div>
+
+                    <p class="text-gray-300 text-base leading-relaxed about-line" style="--d:0.1s">
+                      <strong class="text-white text-xl font-serif tracking-wide about-name-glow">Hello, I'm Natthawit.</strong><br/>
+                      A dedicated engineer architecting cyber-physical operations, bridging the gap between hardware intelligence and digital ecosystems.
+                    </p>
+                    <p class="text-gray-400 text-sm leading-relaxed about-line" style="--d:0.25s">
+                      My journey started with hacking <span class="text-[#ff6565] font-mono">ESP32</span> microcontrollers and evolved into engineering high-performance web applications managing real-time data flows for IoT systems.
+                    </p>
+                    <p class="text-gray-400 text-sm leading-relaxed about-line" style="--d:0.4s">
+                      I blend <span class="text-[#ff6565] font-mono">hardware logic</span> with software elegance — creating solutions as robust conceptually as they are visually.
+                    </p>
+
+                    <!-- Animated scan line divider -->
+                    <div class="scan-divider"></div>
+
+                    <!-- Status Badges -->
+                    <div class="flex flex-wrap gap-3 about-line" style="--d:0.5s">
+                      <span class="status-badge"><span class="status-dot"></span>Available for work</span>
+                      <span class="status-badge status-badge--mono"><span class="status-dot status-dot--blue"></span>Bangkok, TH</span>
+                      <span class="status-badge status-badge--mono">IoT · Web · AI</span>
+                    </div>
+                  </div>
+
+                  <!-- Right: Holographic Identity Card -->
+                  <div class="holo-card">
+                    <!-- Shimmer overlay -->
+                    <div class="holo-shimmer"></div>
+                    <!-- Orbit ring -->
+                    <div class="holo-orbit" aria-hidden="true">
+                      <div class="holo-orbit__ring ring-1"></div>
+                      <div class="holo-orbit__ring ring-2"></div>
+                      <div class="holo-orbit__dot"></div>
+                    </div>
+                    <!-- Card inner content -->
+                    <div class="holo-card__body">
+                      <div class="holo-card__icon">🚀</div>
+                      <h3 class="holo-card__title">Core Objective</h3>
+                      <p class="holo-card__text">To construct scalable platforms that simplify complex IoT infrastructures using modern web frameworks and reactive programming paradigms.</p>
+                      <!-- Neon stat chips -->
+                      <div class="holo-card__stats">
+                        <div class="neon-stat"><span class="neon-stat__num" style="--target:5">5+</span><span class="neon-stat__label">Projects</span></div>
+                        <div class="neon-stat neon-stat--center"><span class="neon-stat__num" style="--target:3">3+</span><span class="neon-stat__label">Awards</span></div>
+                        <div class="neon-stat"><span class="neon-stat__num" style="--target:2">2+</span><span class="neon-stat__label">Years</span></div>
+                      </div>
+                    </div>
+                    <!-- Corner brackets -->
+                    <div class="holo-corner holo-corner--tl"></div>
+                    <div class="holo-corner holo-corner--tr"></div>
+                    <div class="holo-corner holo-corner--bl"></div>
+                    <div class="holo-corner holo-corner--br"></div>
+                  </div>
                 </div>
+
+                <!-- === BOTTOM ROW: Animated Tech Tags === -->
+                <div class="tech-ribbon-track" aria-hidden="true">
+                  <div class="tech-ribbon">
+                    <span v-for="tag in ['Vue.js','Nuxt 3','ESP32','IoT','Python','C++','Node.js','MQTT','TailwindCSS','GSAP','Firebase','Linux']" :key="tag" class="tech-tag">{{ tag }}</span>
+                    <!-- Duplicate for seamless loop -->
+                    <span v-for="tag in ['Vue.js','Nuxt 3','ESP32','IoT','Python','C++','Node.js','MQTT','TailwindCSS','GSAP','Firebase','Linux']" :key="'dup-'+tag" class="tech-tag" aria-hidden="true">{{ tag }}</span>
+                  </div>
+                </div>
+
               </div>
 
               <!-- 2. EDUCATION TIMELINE TAB -->
@@ -307,6 +383,29 @@
       <!-- PROJECTS SECTION -->
       <section id="projects" class="w-full min-h-screen flex flex-col relative z-10 p-6 sm:p-10 xl:p-20 bg-[#060606] border-t border-gray-800/60 overflow-hidden">
         
+        <!-- Background: Subtle Tech Grid -->
+        <div class="absolute inset-0 bg-tech-grid opacity-[0.12] pointer-events-none"></div>
+
+        <!-- Background: Soft Radial Glow (top-right) -->
+        <div class="absolute -top-32 -right-32 w-[500px] h-[500px] bg-[#ff6565]/8 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <!-- Background: Faint bottom-left accent -->
+        <div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-[#ff6565]/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <!-- Background: Decorative corner brackets -->
+        <div class="absolute top-8 left-8 w-12 h-12 border-l-2 border-t-2 border-[#ff6565]/15 pointer-events-none rounded-tl-lg"></div>
+        <div class="absolute top-8 right-8 w-12 h-12 border-r-2 border-t-2 border-[#ff6565]/15 pointer-events-none rounded-tr-lg"></div>
+        <div class="absolute bottom-8 left-8 w-12 h-12 border-l-2 border-b-2 border-[#ff6565]/15 pointer-events-none rounded-bl-lg"></div>
+        <div class="absolute bottom-8 right-8 w-12 h-12 border-r-2 border-b-2 border-[#ff6565]/15 pointer-events-none rounded-br-lg"></div>
+
+        <!-- Background: Floating circuit dots -->
+        <div class="absolute top-1/4 left-6 flex flex-col gap-3 pointer-events-none opacity-[0.12]">
+          <div v-for="n in 6" :key="n" class="w-1 h-1 rounded-full bg-[#ff6565]"></div>
+        </div>
+        <div class="absolute top-1/3 right-6 flex flex-col gap-3 pointer-events-none opacity-[0.12]">
+          <div v-for="n in 4" :key="n" class="w-1 h-1 rounded-full bg-[#ff6565]"></div>
+        </div>
+
         <div class="max-w-6xl w-full mx-auto flex flex-col gap-12 relative z-10 my-auto">
           
           <div class="flex flex-col md:flex-row items-start md:items-end justify-between border-b border-gray-800 pb-6 gap-4 md:gap-6 gsap-fade-up">
@@ -1190,6 +1289,373 @@ main::-webkit-scrollbar-thumb:hover {
   50% { border-color: #ff6565; }
 }
 
+/* ======================================================= */
+/* ABOUT ME — REDESIGNED KEYFRAME ANIMATIONS              */
+/* ======================================================= */
+
+/* Panel entrance */
+.about-me-panel {
+  animation: aboutPanelIn 0.7s cubic-bezier(0.16,1,0.3,1) both;
+}
+@keyframes aboutPanelIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Bio lines staggered slide-in */
+.about-line {
+  animation: aboutLineIn 0.6s cubic-bezier(0.16,1,0.3,1) both;
+  animation-delay: var(--d, 0s);
+}
+@keyframes aboutLineIn {
+  from { opacity:0; transform: translateX(-20px); }
+  to   { opacity:1; transform: translateX(0); }
+}
+
+/* ---- Glitch Tag ---- */
+.glitch-wrapper {
+  display: inline-block;
+  margin-bottom: 4px;
+}
+.glitch-tag {
+  display: inline-block;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #ff6565;
+  position: relative;
+  animation: glitchText 4s infinite;
+}
+.glitch-tag::before,
+.glitch-tag::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0; top: 0;
+  opacity: 0.7;
+}
+.glitch-tag::before {
+  color: #ff9e9e;
+  animation: glitchBefore 4s infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
+}
+.glitch-tag::after {
+  color: #ff3333;
+  animation: glitchAfter 4s infinite;
+  clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+}
+@keyframes glitchText {
+  0%,90%,100% { transform: translate(0); }
+  92%   { transform: translate(-2px, 1px); }
+  94%   { transform: translate(2px, -1px); }
+  96%   { transform: translate(-1px, 2px); }
+}
+@keyframes glitchBefore {
+  0%,90%,100% { transform: translate(0); }
+  92%   { transform: translate(3px, 0); }
+  94%   { transform: translate(-3px, 0); }
+}
+@keyframes glitchAfter {
+  0%,90%,100% { transform: translate(0); }
+  92%   { transform: translate(-3px, 1px); }
+  94%   { transform: translate(3px, -1px); }
+}
+
+/* ---- Glowing name ---- */
+.about-name-glow {
+  animation: nameGlow 3s ease-in-out infinite alternate;
+}
+@keyframes nameGlow {
+  from { text-shadow: 0 0 0px transparent; }
+  to   { text-shadow: 0 0 18px rgba(255,101,101,0.35); }
+}
+
+/* ---- Scan line divider ---- */
+.scan-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #ff6565, transparent);
+  position: relative;
+  overflow: visible;
+  animation: scanPulse 2.5s ease-in-out infinite;
+}
+.scan-divider::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 40px;
+  height: 5px;
+  background: #ff6565;
+  border-radius: 999px;
+  filter: blur(3px);
+  animation: scanMove 2.5s linear infinite;
+}
+@keyframes scanPulse {
+  0%,100% { opacity: 0.3; }
+  50%     { opacity: 1; }
+}
+@keyframes scanMove {
+  from { left: 0%; }
+  to   { left: 100%; }
+}
+
+/* ---- Status Badges ---- */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #9ca3af;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+  padding: 5px 12px;
+  border-radius: 999px;
+  animation: badgeFadeIn 0.5s ease both;
+  animation-delay: 0.55s;
+  transition: border-color 0.3s, color 0.3s;
+}
+.status-badge:hover {
+  border-color: rgba(255,101,101,0.4);
+  color: #ff6565;
+}
+.status-badge--mono { font-family: 'Space Grotesk', monospace; }
+@keyframes badgeFadeIn {
+  from { opacity:0; transform: scale(0.9); }
+  to   { opacity:1; transform: scale(1); }
+}
+.status-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #22c55e;
+  animation: dotPulse 1.5s ease-in-out infinite;
+}
+.status-dot--blue { background: #60a5fa; animation: none; }
+@keyframes dotPulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.5); }
+  50%     { box-shadow: 0 0 0 5px rgba(34,197,94,0); }
+}
+
+/* ---- Holographic Card ---- */
+.holo-card {
+  position: relative;
+  background: linear-gradient(135deg, #131313 0%, #0f0f0f 100%);
+  border: 1px solid rgba(255,101,101,0.2);
+  border-radius: 2rem;
+  padding: 2.5rem 2rem 2rem;
+  overflow: hidden;
+  animation: holoCardIn 0.8s cubic-bezier(0.16,1,0.3,1) 0.2s both;
+  box-shadow: 0 0 40px rgba(255,101,101,0.06), inset 0 1px 0 rgba(255,255,255,0.05);
+}
+@keyframes holoCardIn {
+  from { opacity:0; transform: scale(0.94) translateY(20px); }
+  to   { opacity:1; transform: scale(1) translateY(0); }
+}
+.holo-card:hover {
+  border-color: rgba(255,101,101,0.4);
+  box-shadow: 0 0 60px rgba(255,101,101,0.12);
+  transition: all 0.5s ease;
+}
+
+/* Shimmer sweep */
+.holo-shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg,
+    transparent 30%,
+    rgba(255,101,101,0.04) 50%,
+    transparent 70%);
+  background-size: 200% 100%;
+  animation: shimmerSweep 3s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+@keyframes shimmerSweep {
+  from { background-position: -200% 0; }
+  to   { background-position: 200% 0; }
+}
+
+/* Orbit rings */
+.holo-orbit {
+  position: absolute;
+  right: -50px; top: -50px;
+  width: 180px; height: 180px;
+  pointer-events: none;
+  z-index: 0;
+}
+.holo-orbit__ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255,101,101,0.15);
+}
+.ring-1 { inset: 0; animation: orbitSpin 8s linear infinite; }
+.ring-2 { inset: 20px; border-color: rgba(255,101,101,0.08); animation: orbitSpin 12s linear infinite reverse; }
+@keyframes orbitSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.holo-orbit__dot {
+  position: absolute;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #ff6565;
+  top: 50%; left: 0;
+  transform: translate(-50%, -50%);
+  transform-origin: 90px center;
+  animation: orbitSpin 8s linear infinite;
+  box-shadow: 0 0 8px rgba(255,101,101,0.8);
+}
+
+/* Card body */
+.holo-card__body { position: relative; z-index: 1; }
+.holo-card__icon {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  display: inline-block;
+  animation: iconFloat 3s ease-in-out infinite;
+}
+@keyframes iconFloat {
+  0%,100% { transform: translateY(0) rotate(0deg); }
+  50%     { transform: translateY(-6px) rotate(5deg); }
+}
+.holo-card__title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+  letter-spacing: 0.02em;
+}
+.holo-card__text {
+  font-size: 0.8rem;
+  color: #6b7280;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+/* Neon stat counters */
+.holo-card__stats {
+  display: flex;
+  gap: 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: 16px;
+}
+.neon-stat {
+  flex: 1;
+  text-align: left;
+}
+.neon-stat--center { text-align: center; border-left: 1px solid rgba(255,255,255,0.06); border-right: 1px solid rgba(255,255,255,0.06); padding: 0 10px; }
+.neon-stat__num {
+  display: block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ff6565;
+  animation: neonFlicker 5s ease-in-out infinite;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+@keyframes neonFlicker {
+  0%,95%,100% { text-shadow: 0 0 8px rgba(255,101,101,0.8); }
+  96%          { text-shadow: none; opacity: 0.7; }
+  97%          { text-shadow: 0 0 12px rgba(255,101,101,1); opacity: 1; }
+}
+.neon-stat__label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #4b5563;
+}
+
+/* Corner brackets */
+.holo-corner {
+  position: absolute;
+  width: 16px; height: 16px;
+  border-color: rgba(255,101,101,0.4);
+  border-style: solid;
+  animation: cornerPulse 3s ease-in-out infinite;
+}
+.holo-corner--tl { top: 12px; left: 12px; border-width: 2px 0 0 2px; border-radius: 4px 0 0 0; }
+.holo-corner--tr { top: 12px; right: 12px; border-width: 2px 2px 0 0; border-radius: 0 4px 0 0; animation-delay: 0.2s; }
+.holo-corner--bl { bottom: 12px; left: 12px; border-width: 0 0 2px 2px; border-radius: 0 0 0 4px; animation-delay: 0.4s; }
+.holo-corner--br { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; border-radius: 0 0 4px 0; animation-delay: 0.6s; }
+@keyframes cornerPulse {
+  0%,100% { border-color: rgba(255,101,101,0.3); }
+  50%     { border-color: rgba(255,101,101,0.8); }
+}
+
+/* ---- Ambient Particles ---- */
+.about-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+.particle {
+  position: absolute;
+  width: calc(2px + (var(--i) * 0.5px));
+  height: calc(2px + (var(--i) * 0.5px));
+  border-radius: 50%;
+  background: rgba(255,101,101,0.4);
+  left: calc((var(--i) * 7.7%) + 2%);
+  bottom: -10px;
+  animation: particleFloat calc(4s + (var(--i) * 0.6s)) ease-in-out infinite;
+  animation-delay: calc(var(--i) * -0.4s);
+  filter: blur(1px);
+}
+@keyframes particleFloat {
+  0%   { transform: translateY(0) scale(1); opacity: 0; }
+  10%  { opacity: 0.8; }
+  90%  { opacity: 0.3; }
+  100% { transform: translateY(-200px) scale(0.3); opacity: 0; }
+}
+
+/* ---- Tech Ribbon Marquee ---- */
+.tech-ribbon-track {
+  width: 100%;
+  overflow: hidden;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding-top: 16px;
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+.tech-ribbon {
+  display: flex;
+  gap: 12px;
+  width: max-content;
+  animation: techScroll 20s linear infinite;
+}
+@keyframes techScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.tech-tag {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,101,101,0.7);
+  border: 1px solid rgba(255,101,101,0.15);
+  background: rgba(255,101,101,0.04);
+  padding: 5px 14px;
+  border-radius: 999px;
+  white-space: nowrap;
+  transition: all 0.3s;
+}
+.tech-tag:hover {
+  background: rgba(255,101,101,0.12);
+  color: #ff6565;
+  border-color: rgba(255,101,101,0.4);
+}
+
 /* Performance optimizations for animated elements */
 .gsap-fade-up {
   backface-visibility: hidden;
@@ -1198,8 +1664,91 @@ main::-webkit-scrollbar-thumb:hover {
   transform-style: preserve-3d;
 }
 
-/* Ensure smooth image scaling */
-.group:hover img {
+/* -------------------------------- */
+/* HOME SECTION KEYFRAMES          */
+/* -------------------------------- */
+
+.home-title-reveal span span {
+  animation: revealText 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  transform: translateY(100%);
+}
+.home-title-reveal span:nth-child(2) span {
+  animation-delay: 0.3s;
+}
+
+@keyframes revealText {
+  to { transform: translateY(0); }
+}
+
+.home-fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInDown 0.8s ease-out forwards;
+}
+
+@keyframes fadeInDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-card-float {
+  animation: floatCard 6s ease-in-out infinite;
+}
+
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.home-scanner {
+  animation: scanLine 4s linear infinite;
+}
+
+@keyframes scanLine {
+  0% { top: 0; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+.home-social-pop {
+  opacity: 0;
+  transform: scale(0.5);
+  animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes popIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.home-btn-glow {
+  animation: btnPulse 3s infinite;
+}
+
+@keyframes btnPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 101, 101, 0.3); }
+  50% { box-shadow: 0 0 35px rgba(255, 101, 101, 0.6); }
+}
+
+.home-blob-1 {
+  animation: blobMove 20s infinite alternate;
+}
+.home-blob-2 {
+  animation: blobMove 25s infinite alternate-reverse;
+}
+
+@keyframes blobMove {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(50px, 30px) scale(1.1); }
+}
+
+/* Ensure smooth image scaling — scoped to award cards only */
+.award-card .group:hover img {
   transform: scale(1.1) translateZ(0);
 }
 </style>
