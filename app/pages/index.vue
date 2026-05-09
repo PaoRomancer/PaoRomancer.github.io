@@ -106,6 +106,29 @@
         <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-[#ff6565]/5 rounded-full blur-[100px] home-blob-1 pointer-events-none"></div>
         <div class="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-[#ff6565]/10 rounded-full blur-[120px] home-blob-2 pointer-events-none"></div>
 
+        <!-- Floating Code Snippets -->
+        <div class="absolute top-[15%] right-[8%] pointer-events-none z-0 home-code-float hidden xl:block">
+          <div class="font-mono text-[10px] text-[#ff6565]/20 leading-relaxed home-code-drift" style="--drift-d:0s">
+            <div>const IoT = await connect();</div>
+            <div>sensor.read(0x3F);</div>
+            <div>mqtt.publish(data);</div>
+          </div>
+        </div>
+        <div class="absolute bottom-[20%] left-[5%] pointer-events-none z-0 home-code-float hidden xl:block">
+          <div class="font-mono text-[10px] text-[#ff6565]/15 leading-relaxed home-code-drift" style="--drift-d:2s">
+            <div>&lt;template&gt;</div>
+            <div>  &lt;NuxtPage /&gt;</div>
+            <div>&lt;/template&gt;</div>
+          </div>
+        </div>
+
+        <!-- Crosshair Decorations -->
+        <div class="absolute top-[10%] left-[12%] w-8 h-8 pointer-events-none z-0 home-crosshair hidden xl:block">
+          <div class="absolute inset-0 border border-[#ff6565]/15 rounded-full"></div>
+          <div class="absolute top-1/2 left-0 w-full h-px bg-[#ff6565]/10"></div>
+          <div class="absolute top-0 left-1/2 w-px h-full bg-[#ff6565]/10"></div>
+        </div>
+
         <div class="max-w-2xl w-full xl:pr-12 relative z-10">
           <div class="flex items-center gap-3 mb-6 home-fade-in" style="animation-delay: 0.2s">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400">
@@ -133,13 +156,28 @@
           </div>
         </div>
 
-        <!-- Profile Card with Floating Animation -->
-        <div class="bg-[#181818] p-4 sm:p-5 rounded-[2rem] sm:rounded-[2.5rem] w-full max-w-[340px] sm:max-w-[420px] flex flex-col items-center border border-gray-800 shadow-2xl mt-8 xl:mt-0 relative z-10 group home-card-float">
+        <!-- Profile Card with Holographic Frame -->
+        <div class="home-profile-card bg-[#181818] p-4 sm:p-5 rounded-[2rem] sm:rounded-[2.5rem] w-full max-w-[340px] sm:max-w-[420px] flex flex-col items-center border border-gray-800 shadow-2xl mt-8 xl:mt-0 relative z-10 group home-card-float">
+          <!-- Glow aura -->
           <div class="absolute -inset-4 bg-gradient-to-r from-[#ff6565]/20 to-transparent opacity-0 group-hover:opacity-100 blur-2xl transition-opacity duration-700 -z-10"></div>
           
+          <!-- Corner Brackets -->
+          <div class="home-corner home-corner--tl"></div>
+          <div class="home-corner home-corner--tr"></div>
+          <div class="home-corner home-corner--bl"></div>
+          <div class="home-corner home-corner--br"></div>
+
+          <!-- Orbit Rings -->
+          <div class="absolute -top-10 -right-10 w-32 h-32 pointer-events-none z-0 home-orbit-container">
+            <div class="absolute inset-0 border border-[#ff6565]/10 rounded-full home-orbit-spin"></div>
+            <div class="absolute inset-3 border border-[#ff6565]/5 rounded-full home-orbit-spin-reverse"></div>
+            <div class="absolute w-2 h-2 bg-[#ff6565] rounded-full top-0 left-1/2 -translate-x-1/2 home-orbit-spin shadow-[0_0_8px_rgba(255,101,101,0.8)]"></div>
+          </div>
+          
           <div id="home-portrait-wrapper" class="w-full aspect-[4/5] bg-gray-800 rounded-[2rem] overflow-hidden mb-6 relative border border-gray-800/50">
-            <!-- Scanning Line Effect -->
-            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#ff6565] to-transparent z-30 home-scanner"></div>
+            <!-- Dual Scanning Lines -->
+            <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#ff6565] to-transparent z-30 home-scanner"></div>
+            <div class="absolute top-0 left-0 w-0.5 h-full bg-gradient-to-b from-transparent via-[#ff6565]/40 to-transparent z-30 home-scanner-v"></div>
             
             <!-- Side-by-side sliding container -->
             <div class="portrait-main-slide flex h-full w-[200%] -translate-x-1/2">
@@ -151,8 +189,34 @@
                    class="w-1/2 h-full object-cover" />
             </div>
             
+            <!-- HUD Data Overlay -->
+            <div class="absolute top-4 left-4 z-20 pointer-events-none home-hud-in">
+              <div class="font-mono text-[8px] text-[#ff6565]/60 tracking-widest uppercase leading-loose">
+                <div class="home-hud-line" style="--hud-d:0.5s">ID: NATTHAWIT_P</div>
+                <div class="home-hud-line" style="--hud-d:0.7s">STATUS: <span class="text-green-400/60">ONLINE</span></div>
+                <div class="home-hud-line" style="--hud-d:0.9s">LOC: BANGKOK, TH</div>
+              </div>
+            </div>
+
+            <!-- Bottom right data -->
+            <div class="absolute bottom-4 right-4 z-20 pointer-events-none text-right home-hud-in" style="--hud-d:1.1s">
+              <div class="font-mono text-[8px] text-[#ff6565]/40 tracking-widest">
+                <div>FRAME: 60FPS</div>
+                <div>RES: 4K</div>
+              </div>
+            </div>
+            
             <!-- Decorative Overlay -->
-            <div class="absolute inset-0 pointer-events-none rounded-[2rem] z-20 bg-gradient-to-t from-black/40 to-transparent"></div>
+            <div class="absolute inset-0 pointer-events-none rounded-[2rem] z-20 bg-gradient-to-t from-black/50 via-transparent to-black/20"></div>
+            
+            <!-- Glitch Flash -->
+            <div class="absolute inset-0 z-25 pointer-events-none home-glitch-flash"></div>
+          </div>
+
+          <!-- Status Indicator -->
+          <div class="flex items-center gap-2 mb-4 home-fade-in" style="animation-delay: 1.3s">
+            <span class="w-1.5 h-1.5 rounded-full bg-green-400 shadow-[0_0_6px_rgba(74,222,128,0.6)] animate-pulse"></span>
+            <span class="font-mono text-[9px] text-gray-500 tracking-widest uppercase">Available for Opportunities</span>
           </div>
 
           <div class="flex gap-4 mb-2">
@@ -1698,19 +1762,35 @@ main::-webkit-scrollbar-thumb:hover {
 }
 
 @keyframes floatCard {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-10px) rotate(0.5deg); }
+  50% { transform: translateY(-15px) rotate(0deg); }
+  75% { transform: translateY(-8px) rotate(-0.5deg); }
 }
 
+/* --- Horizontal Scanner --- */
 .home-scanner {
-  animation: scanLine 4s linear infinite;
+  animation: scanLine 3.5s linear infinite;
 }
 
 @keyframes scanLine {
   0% { top: 0; opacity: 0; }
-  10% { opacity: 1; }
-  90% { opacity: 1; }
+  5% { opacity: 1; }
+  95% { opacity: 0.8; }
   100% { top: 100%; opacity: 0; }
+}
+
+/* --- Vertical Scanner --- */
+.home-scanner-v {
+  animation: scanLineV 5s linear infinite;
+  animation-delay: 1.5s;
+}
+
+@keyframes scanLineV {
+  0% { left: 0; opacity: 0; }
+  5% { opacity: 1; }
+  95% { opacity: 0.6; }
+  100% { left: 100%; opacity: 0; }
 }
 
 .home-social-pop {
@@ -1745,6 +1825,115 @@ main::-webkit-scrollbar-thumb:hover {
 @keyframes blobMove {
   from { transform: translate(0, 0) scale(1); }
   to { transform: translate(50px, 30px) scale(1.1); }
+}
+
+/* --- Floating Code Snippets --- */
+.home-code-float {
+  animation: codeAppear 1.5s ease-out 1s both;
+}
+
+@keyframes codeAppear {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.home-code-drift {
+  animation: codeDrift 8s ease-in-out infinite;
+  animation-delay: var(--drift-d, 0s);
+}
+
+@keyframes codeDrift {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  33% { transform: translateY(-8px) translateX(4px); }
+  66% { transform: translateY(4px) translateX(-3px); }
+}
+
+/* --- Crosshair Decoration --- */
+.home-crosshair {
+  animation: crosshairPulse 4s ease-in-out infinite, crosshairSpin 12s linear infinite;
+}
+
+@keyframes crosshairPulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.2); }
+}
+
+@keyframes crosshairSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* --- Profile Card Corner Brackets --- */
+.home-corner {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-color: rgba(255,101,101,0.3);
+  border-style: solid;
+  z-index: 30;
+  animation: homeCornerPulse 3s ease-in-out infinite;
+}
+.home-corner--tl { top: 8px; left: 8px; border-width: 2px 0 0 2px; border-radius: 4px 0 0 0; }
+.home-corner--tr { top: 8px; right: 8px; border-width: 2px 2px 0 0; border-radius: 0 4px 0 0; animation-delay: 0.3s; }
+.home-corner--bl { bottom: 8px; left: 8px; border-width: 0 0 2px 2px; border-radius: 0 0 0 4px; animation-delay: 0.6s; }
+.home-corner--br { bottom: 8px; right: 8px; border-width: 0 2px 2px 0; border-radius: 0 0 4px 0; animation-delay: 0.9s; }
+
+@keyframes homeCornerPulse {
+  0%, 100% { border-color: rgba(255,101,101,0.2); }
+  50% { border-color: rgba(255,101,101,0.7); }
+}
+
+/* --- Orbit Rings --- */
+.home-orbit-spin {
+  animation: homeOrbit 10s linear infinite;
+}
+.home-orbit-spin-reverse {
+  animation: homeOrbit 14s linear infinite reverse;
+}
+
+@keyframes homeOrbit {
+  to { transform: rotate(360deg); }
+}
+
+/* --- HUD Data Overlay --- */
+.home-hud-line {
+  opacity: 0;
+  transform: translateX(-8px);
+  animation: hudLineIn 0.5s ease-out forwards;
+  animation-delay: var(--hud-d, 0s);
+}
+
+@keyframes hudLineIn {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* --- Glitch Flash on Portrait --- */
+.home-glitch-flash {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(255,101,101,0.03) 45%,
+    rgba(255,101,101,0.08) 50%,
+    rgba(255,101,101,0.03) 55%,
+    transparent 100%
+  );
+  animation: glitchFlash 6s infinite;
+  mix-blend-mode: screen;
+}
+
+@keyframes glitchFlash {
+  0%, 89%, 100% { opacity: 0; transform: translateY(0); }
+  90% { opacity: 1; transform: translateY(-100%); }
+  92% { opacity: 0.5; transform: translateY(50%); }
+  94% { opacity: 0; transform: translateY(0); }
+}
+
+/* --- Profile Card Hover Glow Border --- */
+.home-profile-card {
+  transition: border-color 0.5s ease, box-shadow 0.5s ease;
+}
+.home-profile-card:hover {
+  border-color: rgba(255,101,101,0.3);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.6), 0 0 40px rgba(255,101,101,0.08);
 }
 
 /* Ensure smooth image scaling — scoped to award cards only */
