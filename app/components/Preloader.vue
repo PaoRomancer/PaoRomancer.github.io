@@ -186,11 +186,11 @@ onMounted(async () => {
       setTimeout(() => {
         visible.value = false
         emit('complete')
-      }, 400)
+      }, 100)
     }
   })
 
-  const totalDuration = 3.5 // seconds for entire boot sequence
+  const totalDuration = 1.0 // seconds for entire boot sequence
 
   // Animate progress bar
   tl.to({}, {
